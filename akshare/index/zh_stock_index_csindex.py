@@ -114,11 +114,14 @@ def index_value_name_funddb() -> pd.DataFrame:
     r = requests.post(url, json=payload)
     data_json = r.json()
     temp_df = pd.DataFrame(data_json["data"]["right_list"])
+    ##  韭菜圈数据格式更新，原来的30列增加到32列
     temp_df.columns = [
         "指数开始时间",
         "-",
         "指数名称",
         "指数代码",
+        "-",
+        "-",
         "-",
         "-",
         "-",
